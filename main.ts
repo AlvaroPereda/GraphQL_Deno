@@ -19,7 +19,7 @@ const dinosaurCollection = db.collection<DinosaurModel>("dinosaur");
 const typeDefs = `#graphql
 
   type Dinosaur {
-    id: String!
+    id: ID!
     name: String!
     type: String!
   }
@@ -29,13 +29,13 @@ const typeDefs = `#graphql
 
   type Query {
     getDinosaur:[Dinosaur!]!
-    getDinosaurById(id: String!): Dinosaur
+    getDinosaurById(id: ID!): Dinosaur
   }
 
   type Mutation {
     addDinosaur(name:String!, type:String!): Dinosaur!
-    modifiedDinosaur(id:String!,name:String!,type:String!): MutationResponse!
-    deleteDinosaur(id:String!):MutationResponse!
+    modifiedDinosaur(id:ID!,name:String!,type:String!): MutationResponse!
+    deleteDinosaur(id:ID!):MutationResponse!
   }
 `
 
